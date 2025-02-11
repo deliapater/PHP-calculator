@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Document</title>
 </head>
 
@@ -33,11 +34,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors = false;
 
     if (empty($num01) || empty($num02) || empty($operator)) {
-        echo "<p class='alc-error'>Fill in all fields!</p>";
+        echo "<p class='calc-error'>Fill in all fields!</p>";
         $errors = true;
     }
     if (!is_numeric($num01) || !is_numeric($num02)) {
-        echo "<p class='alc-error'>Only write numbers!</p>";
+        echo "<p class='calc-error'>Only write numbers!</p>";
         $errors = true;
     }
 
@@ -58,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $value = $num01 / $num02;
                 break;
             default:
-            echo "<p class='alc-error'>Something went wrong!</p>";
+            echo "<p class='calc-error'>Something went wrong!</p>";
         }
         echo "<p class='calc-result'>Result = " . $value . "</p>";
     }
